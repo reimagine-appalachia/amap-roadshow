@@ -650,6 +650,7 @@ footer.site-footer .container {
 @media (max-width: 700px) {
   footer.site-footer .container { flex-direction: column; text-align: center; }
   .footer-col.right { text-align: center; }
+  .footer-org { align-items: center; }
 }
 
 /* Competitive Edge — static icon cards */
@@ -732,12 +733,17 @@ footer.site-footer .container {
 
   /* Stack the agenda table into cards instead of hiding the Speakers column */
   table.agenda thead { display: none; }
+  table.agenda { border-collapse: separate; border-spacing: 0; }
   table.agenda, table.agenda tbody, table.agenda tr, table.agenda td { display: block; width: 100%; }
   table.agenda tr {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px rgba(18,59,68,0.06);
+    padding: 16px;
+    margin-bottom: 14px;
   }
-  table.agenda tr:last-child { border-bottom: none; }
+  table.agenda tr:last-child { margin-bottom: 0; }
   table.agenda td {
     padding: 4px 0;
     border-bottom: none;

@@ -131,14 +131,15 @@ nav.main-nav a.active {
 /* Countdown — single-line badge, same height as the register button */
 .countdown {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(253,211,94,0.35);
   border-radius: 6px;
   padding: 8px 14px;
-  white-space: nowrap;
+  max-width: 100%;
 }
+.countdown-icon { margin-top: 2px; }
 .countdown-icon {
   width: 16px;
   height: 16px;
@@ -728,5 +729,30 @@ footer.site-footer .container {
 @media (max-width: 640px) {
   .site-header .container { flex-direction: column; align-items: flex-start; }
   .stop-banner .details { flex-direction: column; gap: 6px; }
-  table.agenda th:nth-child(3), table.agenda td:nth-child(3) { display: none; }
+
+  /* Stack the agenda table into cards instead of hiding the Speakers column */
+  table.agenda thead { display: none; }
+  table.agenda, table.agenda tbody, table.agenda tr, table.agenda td { display: block; width: 100%; }
+  table.agenda tr {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+  table.agenda tr:last-child { border-bottom: none; }
+  table.agenda td {
+    padding: 4px 0;
+    border-bottom: none;
+  }
+  table.agenda td.time { font-size: 0.98rem; }
+  table.agenda td:nth-child(2)::before,
+  table.agenda td:nth-child(3)::before {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  table.agenda td:nth-child(2)::before { content: "Agenda Item"; }
+  table.agenda td:nth-child(3)::before { content: "Speakers"; }
 }

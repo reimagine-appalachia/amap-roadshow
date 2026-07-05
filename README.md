@@ -1,56 +1,41 @@
-# Summer 2026 Manufacturing Roadshow — Resource Site
+# Summer 2026 Manufacturing Roadshow Site
 
-A simple static website (no accounts, no personal data collection except an optional
-email signup) for ReImagine Appalachia's Summer 2026 Manufacturing Roadshow Series.
+This is the site for ReImagine Appalachia and AMCC's Summer 2026 Manufacturing Roadshow. It's a static site — there's no backend, no CMS, and no database. The only outside service it talks to is Formspree, which handles the email signup form.
 
-## Files
+The site is live at https://reimagine-appalachia.github.io/amap-roadshow/
 
-- `index.html` — home page: stop overview, about blurb, email signup
-- `agenda.html` — full agenda for all 5 stops
-- `speakers.html` — all 22 speakers with organization and which stop(s) they're at
-- `resources.html` — partner org descriptions and resource links
-- `about.html` — A-MAP vision, 10 pillars, why attend, what's next
-- `styles.css` — shared styling (ReImagine Appalachia teal/gold brand)
-- `assets/hero-bg.jpg` — background photo used on the home page hero
-- `assets/A-MAP-One-Pager.pdf` — the original one-pager, offered as a download
-- `assets/ra-logo.png` — real ReImagine Appalachia logo (from the file you attached)
-- `assets/amcc-logo.png` — real AMCC logo (from the file you attached)
-- `assets/logo.png`, `assets/img_0.jpeg`, `assets/img_1.png`, `assets/logo_preview_TEMP.png`,
-  `assets/amcc_preview_TEMP.png` — earlier extracted/recreated logo attempts, no longer
-  used anywhere on the site, safe to ignore or delete
+## What's in this repo
 
-## Deploying to Cloudflare Pages (free)
+`index.html` is the homepage. It has an overview of all five stops and the email signup form.
 
-1. Go to the [Cloudflare dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Upload assets**.
-2. Drag this whole folder in (or zip it and upload the zip).
-3. Give it a project name — Cloudflare will assign a free `*.pages.dev` URL immediately.
-4. Optional: add a custom domain under the project's **Custom domains** tab if you have one.
-5. To make future edits live, just re-upload the folder (or connect a GitHub repo for automatic deploys if you'd rather work that way).
+`agenda.html` has the full schedule for each stop.
 
-No build step, no server, no database — it's just static files.
+`speakers.html` lists all the speakers and lets you filter by which stop they're presenting at.
 
-## Before you publish — a few things to fill in
+`resources.html` has descriptions of and links to all the partner organizations.
 
-**1. Email signup form — done.** The "Stay updated" form on the home page now posts to
-your real Formspree endpoint (`https://formspree.io/f/mbdvppaw`, "A-MAP and Roadshow
-Updates" form). Test it once live to confirm submissions land where you expect.
+`about.html` covers the A-MAP background, the 10 pillars, and why people should attend.
 
-**2. Links still marked "Coming Soon."** A few resources were referenced in the source
-materials as clickable text but without a URL. What's still outstanding on
-`resources.html`: AMCC slides, the AMCC Monday Call/weekly newsletter signup, and the
-True Pigments website. Search for `class="link-btn pending"` in `resources.html` to
-find and replace each one.
+`styles.css` holds all the styling for every page.
 
-**3. Phone number.** The source one-pager had a placeholder phone number
-(123-456-7890) that was clearly not real, so I left it off the site. Add a real one to
-the footer in each HTML file if you have one.
+The `assets` folder has the logos, the hero background photo, and the downloadable one-pager PDF.
 
-**4. Virtual stop & summit details.** The September 8 virtual stop and the closing
-summit don't have full agendas or registration links yet — `agenda.html` currently
-shows "Registration Coming Soon" for both. Update those once details are set.
+A few files in `assets` — `logo.png`, `img_0.jpeg`, `img_1.png`, `logo_preview_TEMP.png`, and `amcc_preview_TEMP.png` — are leftovers from earlier attempts at getting the logos right. They aren't referenced anywhere on the site, so they're safe to delete whenever someone gets around to it.
 
-## Why this version is low-risk
+## How to make edits
 
-No accounts, no login, no AI processing of personal data, no participant bios or
-profiles. The only data collected is an optional email address for update
-notifications, clearly disclosed and opt-in.
+The site is hosted on GitHub Pages and deploys automatically from the `main` branch. To change anything, open the file you want to edit in the repo, click the pencil icon in the top right to switch into edit mode, make your changes, and commit them. GitHub Pages will rebuild and publish the update within about a minute. If you don't see your change after refreshing, try opening the site in a private or incognito tab — browsers tend to cache CSS files aggressively, so what you're seeing might just be an old cached version rather than a failed update.
+
+There's no build step and nothing else to configure. The URL never changes, since it's tied to the repository name rather than anything in the code.
+
+## What still needs attention
+
+A few resource links on `resources.html` are placeholders because the source materials didn't include real URLs for them when the site was built — specifically the AMCC slides and the AMCC newsletter signup. You can find these by searching `resources.html` for `class="link-btn pending"`.
+
+The footer doesn't have a phone number. The original one-pager had a placeholder number (123-456-7890) that was obviously fake, so it was left off entirely. Add a real one if there's a number you want listed.
+
+The virtual stop on September 8 and the closing summit don't have agendas or registration links yet. Both currently show "Registration Coming Soon" on the agenda page, and can be updated once those details are finalized.
+
+## Data collected
+
+The only data collected is an email address through the signup form, and it's opt-in. There are no accounts, no participant profiles, and nothing else tracked.

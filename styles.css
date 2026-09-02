@@ -250,6 +250,25 @@ nav.main-nav a.active {
   transition: background 0.15s, color 0.15s;
 }
 .jump-nav a:hover { background: var(--gold); color: var(--teal-dark); }
+.jump-nav a.current { background: var(--gold); color: var(--teal-dark); }
+.jump-nav a.current:hover { background: var(--gold-light); }
+
+/* Mini countdown above the agenda jump-nav */
+.agenda-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #fff8e6;
+  border: 1px solid var(--gold-light);
+  color: var(--teal-dark);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin: 10px 0 20px;
+}
+.agenda-countdown .countdown-icon { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+.agenda-countdown strong { color: var(--teal-dark); font-variant-numeric: tabular-nums; }
 
 /* Map embed */
 .map-embed {
@@ -320,6 +339,33 @@ details.agenda-details .tour-note { margin-top: 12px; margin-bottom: 0; }
   box-shadow: 0 1px 3px rgba(18,59,68,0.06);
 }
 
+.card.card-new {
+  position: relative;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(247,196,42,0.55);
+  box-shadow: 0 4px 16px rgba(18,59,68,0.08);
+}
+.new-star {
+  position: absolute;
+  top: -13px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gold);
+  color: var(--teal-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 11px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(18,59,68,0.2);
+}
+.new-star svg { width: 12px; height: 12px; }
+
 .card .tag {
   display: inline-block;
   background: var(--teal-light);
@@ -365,7 +411,7 @@ details.agenda-details .tour-note { margin-top: 12px; margin-bottom: 0; }
 /* Recap section (Where We've Been) */
 .recap-split {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 0.85fr 1.3fr;
   gap: 32px;
   align-items: start;
 }
@@ -396,10 +442,10 @@ details.agenda-details .tour-note { margin-top: 12px; margin-bottom: 0; }
   text-decoration: none;
 }
 .recap-stops-list a:hover { color: var(--teal); text-decoration: underline; }
-.recap-map-embed { width: 100%; height: 100%; min-height: 300px; border: 0; border-radius: var(--radius); display: block; margin: 0; }
+.recap-map-embed { width: 100%; height: 100%; min-height: 460px; border: 0; border-radius: var(--radius); display: block; margin: 0; }
 @media (max-width: 780px) {
   .recap-split { grid-template-columns: 1fr; }
-  .recap-map-embed { min-height: 240px; }
+  .recap-map-embed { min-height: 320px; }
 }
 
 /* Stop banner */

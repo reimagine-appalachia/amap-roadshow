@@ -43,11 +43,17 @@
   <div class="container">
     <h1 class="section-title">Roadshow Agenda</h1>
     <p class="section-sub">Jump straight to a stop:</p>
+
+    <div class="agenda-countdown" id="agenda-countdown">
+      <svg class="countdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      <span>Virtual Stop begins in <strong id="agenda-countdown-days">--</strong> Days : <strong id="agenda-countdown-hours">--</strong> Hours</span>
+    </div>
+
     <div class="jump-nav">
       <a href="#huntington">Huntington, WV &rarr;</a>
       <a href="#marietta">Marietta, OH &rarr;</a>
       <a href="#pittsburgh">Pittsburgh, PA &rarr;</a>
-      <a href="#virtual">Virtual Stop &rarr;</a>
+      <a href="#virtual" class="current">Virtual Stop &rarr;</a>
       <a href="#summit">Summit &rarr;</a>
     </div>
 
@@ -383,6 +389,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var target = new Date('2026-09-08T12:00:00-04:00'); // Virtual Stop, 12:00 pm ET
+  var boxEl = document.getElementById('agenda-countdown');
+  var daysEl = document.getElementById('agenda-countdown-days');
+  var hoursEl = document.getElementById('agenda-countdown-hours');
+  if (!boxEl || !daysEl || !hoursEl) return;
+
+  function update() {
+    var diff = target - new Date();
+    if (diff <= 0) {
+      boxEl.style.display = 'none';
+      return;
+    }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    daysEl.textContent = String(days);
+    hoursEl.textContent = String(hours);
+  }
+
+  update();
+  setInterval(update, 60000);
+})();
+</script>
 
 <script>
 (function () {

@@ -48,7 +48,7 @@
     <p class="lead">The in-person stops in Huntington, Marietta, and Pittsburgh have wrapped — the series continues with a virtual stop to keep shaping the Appalachian Manufacturing Action Plan (A-MAP), a roadmap for transforming North Central Appalachia into a 21st-century hub for sustainable, equitable manufacturing.</p>
     <div class="btn-row">
       <a class="btn btn-gold" href="https://reimagineappalachia.org/appalachian-manufacturing-action-plan-summer-roadshow-discussion-series-virtual-event/" target="_blank" rel="noopener">Register for the Virtual Event</a>
-      <a class="btn btn-outline" href="agenda.html">View the Agenda</a>
+      <a class="btn btn-outline" href="agenda.html#virtual">View the Agenda</a>
       <a class="btn btn-outline" href="speakers.html">Meet the Speakers</a>
       <a class="btn btn-outline" href="resources.html">Browse Resources</a>
     </div>
@@ -114,9 +114,50 @@
         </div>
       </div>
       <div class="recap-map">
-        <iframe class="map-embed recap-map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=39.4,-81.3&z=7&output=embed"
-          title="Map of the three in-person roadshow stops"></iframe>
+        <svg class="route-map" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of the roadshow route from Huntington, WV to Marietta, OH to Pittsburgh, PA">
+          <rect x="0" y="0" width="420" height="300" fill="#eef3f2"/>
+          <path d="M-10,250 Q90,225 180,252 T440,238" stroke="#dde7e4" stroke-width="2" fill="none" opacity="0.8"/>
+          <path d="M-10,95 Q110,60 230,92 T440,68" stroke="#dde7e4" stroke-width="2" fill="none" opacity="0.7"/>
+          <path d="M-10,175 Q110,150 220,178 T440,152" stroke="#dde7e4" stroke-width="2" fill="none" opacity="0.6"/>
+
+          <!-- route: road bed + dashed centerline -->
+          <path d="M90,230 C140,205 165,180 210,150 C255,120 285,95 330,70" stroke="#cabf9e" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <path d="M90,230 C140,205 165,180 210,150 C255,120 285,95 330,70" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="6 7" stroke-linecap="round" fill="none"/>
+
+          <!-- Huntington, WV -->
+          <g transform="translate(78,209)">
+            <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="#123b44"/>
+            <circle cx="12" cy="9" r="3" fill="#ffffff"/>
+          </g>
+          <text x="92" y="235" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#123b44">Huntington, WV</text>
+
+          <!-- Marietta, OH -->
+          <g transform="translate(198,129)">
+            <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="#123b44"/>
+            <circle cx="12" cy="9" r="3" fill="#ffffff"/>
+          </g>
+          <text x="212" y="155" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#123b44">Marietta, OH</text>
+
+          <!-- Pittsburgh, PA -->
+          <g transform="translate(318,49)">
+            <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" fill="#123b44"/>
+            <circle cx="12" cy="9" r="3" fill="#ffffff"/>
+          </g>
+          <text x="332" y="40" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#123b44">Pittsburgh, PA</text>
+
+          <!-- Car badge — road trip ended here -->
+          <g transform="translate(356,86)">
+            <circle r="16" fill="#f7c42a"/>
+            <g transform="translate(-9,-8) rotate(-28 9 8)" stroke="#123b44" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 11l1.2-3.6A2 2 0 0 1 4.1 6h7.8a2 2 0 0 1 1.9 1.4L16 11"/>
+              <path d="M1 11a1 1 0 0 0-1 1v1.5a1 1 0 0 0 1 1h1"/>
+              <path d="M16 11a1 1 0 0 1 1 1v1.5a1 1 0 0 1-1 1h-1"/>
+              <path d="M1 11h15"/>
+              <circle cx="4.5" cy="14.5" r="1.4" fill="#123b44"/>
+              <circle cx="13.5" cy="14.5" r="1.4" fill="#123b44"/>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
